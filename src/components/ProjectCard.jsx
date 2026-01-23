@@ -1,92 +1,90 @@
-import { Link } from 'react-router-dom';
-import TechBadge from './TechBadge';
+import { Link } from "react-router-dom";
+import TechBadge from "./TechBadge";
 
-/**
- * ProjectCard Component
- * Displays a project card with image, description, features, and tech stack
- */
 function ProjectCard({ project }) {
   const previewTech = project.getPreviewTechnologies(5);
   const remainingCount = project.getRemainingTechCount(5);
-  const previewFeatures = project.getPreviewFeatures(5);
+  const previewFeatures = project.getPreviewFeatures(4);
 
   return (
-    <Link 
+    <Link
       to={`/projects/${project.slug}`}
-      className="block bg-[#111111] rounded-lg overflow-hidden border border-[#1F1F1F] hover:border-[#2F2F2F] transition-colors duration-300 cursor-pointer"
+      className="block overflow-hidden hover:opacity-90 transition-opacity duration-300"
     >
-      <div className="grid md:grid-cols-2 gap-8 p-8">
-        {/* Left Side - Image */}
-        <div className="flex flex-col justify-between">
-          <div className={`${project.imageColor} rounded-lg aspect-video flex items-center justify-center relative overflow-hidden`}>
+      {/* GRID — 40% left / 60% right split */}
+      <div className="grid md:grid-cols-[40%_60%] items-stretch">
+        
+        {/* LEFT IMAGE PANEL - Dark Gray Background */}
+        <div className="relative bg-black flex flex-col">
+          
+          {/* Image container - no extra padding */}
+          <div className="w-full bg-[#2A2D33]">
             {project.hasImage() ? (
-              /* Real project image */
-              <img 
-                src={project.image} 
+              <img
+                src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-cover"
               />
             ) : (
-              /* Placeholder with gradient and project name */
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[80%] h-[70%] bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 flex items-center justify-center">
-                  <span className="text-black/30 font-bold text-2xl">{project.title}</span>
-                </div>
+              <div className="w-full aspect-[4/3] flex items-center justify-center">
+                <span className="text-white/20 text-lg font-bold">{project.title}</span>
               </div>
             )}
           </div>
-          <p className="text-[#F2F2F2] text-sm mt-4 font-medium">{project.tagline}</p>
+          
+          {/* Tagline below image */}
+          <div className="px-4 py-3 bg-black">
+            <p className="text-white text-xs font-normal leading-tight">
+              {project.tagline}
+            </p>
+          </div>
         </div>
 
-        {/* Right Side - Content */}
-        <div className="flex flex-col justify-between relative">
-          {/* Featured Badge */}
-          {project.featured && (
-            <div className="absolute top-0 right-0">
-              <span className="text-[#00D9FF] text-xs font-medium uppercase tracking-wider">FEATURED</span>
+        {/* RIGHT CONTENT PANEL - Pure Black */}
+        <div className="bg-black p-4 flex flex-col relative">
+          
+          {/* Date badge - top right */}
+          {project.completionDate && (
+            <div className="absolute top-4 right-4">
+              <span className="text-[#888888] text-[9px] font-normal uppercase tracking-wider">
+                {project.completionDate}
+              </span>
             </div>
           )}
 
-          {/* Date Badge */}
-          {!project.featured && project.completionDate && (
-            <div className="absolute top-0 right-0">
-              <span className="text-[#6F6F6F] text-xs font-medium">{project.completionDate}</span>
-            </div>
-          )}
+          {/* Title */}
+          <h2 className="text-white text-base font-semibold pr-16">
+            {project.title}
+          </h2>
 
-          <div>
-            {/* Title */}
-            <h2 className="text-2xl font-bold text-[#F2F2F2] mb-4 pr-24">{project.title}</h2>
+          {/* Description */}
+          <p className="mt-2 text-[#AAAAAA] text-[11px] leading-snug">
+            {project.shortDescription}
+          </p>
 
-            {/* Description */}
-            <p className="text-[#9A9A9A] text-sm leading-relaxed mb-6">
-              {project.shortDescription}
-            </p>
+          {/* Features List */}
+          <ul className="mt-3 space-y-1 flex-1">
+            {previewFeatures.map((feature, i) => (
+              <li key={i} className="text-[#AAAAAA] text-[10px] flex items-start leading-snug">
+                <span className="mr-1.5">•</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+            {project.keyFeatures.length > 4 && (
+              <li className="text-[#777777] text-[10px] flex items-start">
+                <span className="mr-1.5">•</span>
+                <span>+{project.keyFeatures.length - 4} more features</span>
+              </li>
+            )}
+          </ul>
 
-            {/* Features List */}
-            <ul className="space-y-2 mb-6">
-              {previewFeatures.map((feature, index) => (
-                <li key={index} className="text-[#9A9A9A] text-sm flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-              {project.keyFeatures.length > 5 && (
-                <li className="text-[#6F6F6F] text-sm flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>+{project.keyFeatures.length - 5} more features</span>
-                </li>
-              )}
-            </ul>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="flex flex-wrap gap-2">
-            {previewTech.map((tech, index) => (
-              <TechBadge key={index} technology={tech} />
+          {/* Tech Stack - pushed to bottom */}
+          <div className="pt-3 flex flex-wrap gap-1">
+            {previewTech.map((tech, i) => (
+              <TechBadge key={i} technology={tech} />
             ))}
             {remainingCount > 0 && (
-              <span className="bg-[#1A1A1A] text-[#9A9A9A] px-3 py-1.5 rounded-full text-xs font-medium border border-[#2A2A2A]">
+              <span className="px-2 py-0.5 text-[9px] rounded-md bg-[#1A1A1A] text-[#AAAAAA] border border-[#333333] font-medium">
                 +{remainingCount}
               </span>
             )}

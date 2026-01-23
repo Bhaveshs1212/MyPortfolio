@@ -27,7 +27,7 @@ Overall, Blaezi represents an enterprise-grade full-stack application demonstrat
     completionDate: "Jan 2026",
     technologies: ["JavaScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "React.js", "Vite", "Tailwind CSS", "shadcn/ui", "Radix UI", "JWT", "bcrypt", "Axios"],
     imageColor: "bg-gradient-to-br from-purple-200 to-indigo-200",
-    image: "/thumbnails/blaezi.png",
+    image: "/thumbnails/Blaezi.png",
     liveUrl: "https://blaezi-frontend.vercel.app/",
     githubUrl: "https://github.com/Bhaveshs1212/Blaezi",
     timeline: {
@@ -76,7 +76,7 @@ Key features include a dynamic admin dashboard with analytics, blog and event ma
     completionDate: "Nov 2024",
     technologies: ["JavaScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "React.js", "Vite", "Tailwind CSS", "Radix UI", "Framer Motion", "Stripe", "JWT", "Axios", "Multer"],
     imageColor: "bg-gradient-to-br from-green-200 to-blue-200",
-    image: "/thumbnails/gw-infra.png",
+    image: "/thumbnails/GwInfra.png",
     liveUrl: "https://gwinfrasolutions.com",
     githubUrl: "https://github.com/Bhaveshs1212/gwinfra",
     timeline: {
@@ -212,7 +212,7 @@ Key features include real-time order status updates, user authentication with JW
     completionDate: "Jul 2024",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe"],
     imageColor: "bg-gradient-to-br from-green-100 to-green-300",
-    image: "/thumbnails/tomato.png",
+    image: "/thumbnails/Tomato.png",
     liveUrl: "https://tomato.bhaveshs.me/",
     githubUrl: "https://github.com/Bhaveshs1212/food-delivery-app",
     timeline: {
