@@ -18,15 +18,15 @@ function ProjectCard({ project }) {
         <div className="relative bg-black flex flex-col">
           
           {/* Image container - no extra padding */}
-          <div className="w-full bg-[#2A2D33]">
+          <div className="w-full bg-[#2A2D33] overflow-hidden">
             {project.hasImage() ? (
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transition-transform duration-500 ease-out hover:scale-110"
               />
             ) : (
-              <div className="w-full aspect-[4/3] flex items-center justify-center">
+              <div className="w-full aspect-[4/3] flex items-center justify-center transition-transform duration-500 ease-out hover:scale-110">
                 <span className="text-white/20 text-lg font-bold">{project.title}</span>
               </div>
             )}
@@ -84,7 +84,7 @@ function ProjectCard({ project }) {
               <TechBadge key={i} technology={tech} />
             ))}
             {remainingCount > 0 && (
-              <span className="px-2 py-0.5 text-[9px] rounded-md bg-[#1A1A1A] text-[#AAAAAA] border border-[#333333] font-medium">
+              <span className="px-2 py-1 pt-1.5 text-[12px] rounded-md bg-[#1A1A1A] text-[#AAAAAA] border border-[#333333] font-medium">
                 +{remainingCount}
               </span>
             )}

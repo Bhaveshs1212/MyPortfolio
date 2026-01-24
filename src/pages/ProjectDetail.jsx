@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { FiExternalLink, FiGithub, FiArrowLeft } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiArrowLeft, FiChevronRight } from 'react-icons/fi';
 import { getProjectBySlug } from '../data/projects';
 import TechBadge from '../components/TechBadge';
 
@@ -22,59 +22,76 @@ function ProjectDetail() {
     );
   }
 
+  const isTeamProject = project.contributors && project.contributors.length > 1;
+
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
-      {/* Back Button */}
-      <div className="max-w-5xl mx-auto px-8 pt-16 pb-4">
-        <button 
-          onClick={() => navigate('/projects')}
-          className="flex items-center gap-2 text-[#9A9A9A] hover:text-[#F2F2F2] transition-colors duration-200"
-        >
-          <FiArrowLeft /> Back to Projects
-        </button>
+      {/* Breadcrumb Navigation */}
+      <div className="max-w-6xl mx-auto px-8 pt-16 pb-6">
+        <div className="flex items-center gap-2 text-sm text-[#9A9A9A]">
+          <Link to="/" className="hover:text-[#F2F2F2] transition-colors duration-200">
+            Home
+          </Link>
+          <FiChevronRight className="text-xs" />
+          <Link to="/projects" className="hover:text-[#F2F2F2] transition-colors duration-200">
+            Projects
+          </Link>
+          <FiChevronRight className="text-xs" />
+          <span className="text-[#F2F2F2]">{project.title}</span>
+        </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-8 py-12">
-        <div className="relative bg-[#E8E8E8] rounded-2xl overflow-hidden p-12">
-          {/* Project Mockup */}
-          <div className="flex items-center justify-center mb-8">
-            <div className="relative">
-              <div className={`${project.imageColor} rounded-lg w-[600px] h-[350px] flex items-center justify-center shadow-2xl overflow-hidden`}>
-                {project.hasImage() ? (
-                  /* Real project image */
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  /* Placeholder with gradient and project name */
-                  <div className="w-[90%] h-[85%] bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 flex items-center justify-center">
-                    <span className="text-black/30 font-bold text-3xl">{project.title}</span>
-                  </div>
-                )}
+      {/* Hero Section with Image */}
+      <section className="max-w-6xl mx-auto px-8 py-4">
+        <div className="relative rounded-3xl overflow-hidden group">
+          {/* Team Project Badge */}
+          {isTeamProject && (
+            <div className="absolute top-6 right-6 z-20">
+              <span className="bg-[#0B0B0C] text-[#00D9FF] px-4 py-2 rounded-lg text-xs font-semibold tracking-wide">
+                TEAM PROJECT
+              </span>
+            </div>
+          )}
+
+          {/* Project Image Container */}
+          <div className="relative overflow-hidden">
+            {project.hasImage() ? (
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-auto rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105"
+              />
+            ) : (
+              <div className={`${project.imageColor} w-full aspect-video rounded-3xl flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105`}>
+                <div className="w-[90%] h-[85%] bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 flex items-center justify-center">
+                  <span className="text-black/30 font-bold text-4xl">{project.title}</span>
+                </div>
               </div>
+            )}
+
+            {/* Dark Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-3xl"></div>
+
+            {/* Title and Tagline Overlay */}
+            <div className="absolute bottom-8 left-12 right-12 z-10">
+              <h1 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">{project.title}</h1>
+              <p className="text-white text-xl font-medium drop-shadow-md">{project.tagline}</p>
             </div>
           </div>
-
-          {/* Title and Tagline */}
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-[#0B0B0C] mb-2">{project.title}</h1>
-            <p className="text-[#3A3A3A] text-lg">{project.tagline}</p>
-          </div>
         </div>
+      </section>
 
-        {/* Technology Stack */}
-        <div className="flex flex-wrap gap-3 mt-8 justify-center">
+      {/* Technology Stack */}
+      <section className="max-w-6xl mx-auto px-8 py-8">
+        <div className="flex flex-wrap gap-3">
           {project.technologies.map((tech, index) => (
-            <TechBadge key={index} technology={tech} className="px-4 py-2 text-sm" />
+            <TechBadge key={index} technology={tech} />
           ))}
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="max-w-5xl mx-auto px-8 py-12">
+      <section className="max-w-6xl mx-auto px-8 py-12">
         {/* Description */}
         <div className="mb-16">
           <p className="text-[#9A9A9A] leading-relaxed text-justify whitespace-pre-line">
