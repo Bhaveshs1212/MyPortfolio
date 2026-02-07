@@ -27,7 +27,7 @@ const GitHubContributions = () => {
         hideColorLegend={false}
         hideMonthLabels={false}
         hideTotalCount={false}
-        showWeekdayLabels={true}
+        showWeekdayLabels={false}
         labels={{
           totalCount: "{{count}} contributions in the last year"
         }}
