@@ -7,15 +7,16 @@ function ProjectCard({ project }) {
   const previewFeatures = project.getPreviewFeatures(4);
 
   return (
-    <Link
-      to={`/projects/${project.slug}`}
-      className="block overflow-hidden hover:opacity-90 transition-opacity duration-300"
-    >
-      {/* GRID — 40% left / 60% right split */}
-      <div className="grid md:grid-cols-[40%_60%] items-stretch">
-        
-        {/* LEFT IMAGE PANEL - Dark Gray Background */}
-        <div className="relative bg-black flex flex-col">
+    <div className="border border-[#2A2A2A] rounded-xl hover:border-cyan-400/50 transition-all duration-300 hover:scale-[1.02] overflow-hidden group">
+      <Link
+        to={`/projects/${project.slug}`}
+        className="block hover:opacity-90 transition-opacity duration-300"
+      >
+        {/* GRID — 40% left / 60% right split */}
+        <div className="grid md:grid-cols-[40%_60%] items-stretch">
+          
+          {/* LEFT IMAGE PANEL - Dark Gray Background */}
+          <div className="relative bg-black flex flex-col">
           
           {/* Image container - no extra padding */}
           <div className="w-full bg-[#2A2D33] overflow-hidden">
@@ -91,7 +92,8 @@ function ProjectCard({ project }) {
           </div>
         </div>
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

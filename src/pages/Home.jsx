@@ -36,7 +36,7 @@ function Home() {
 
         <div className="mt-12 flex gap-6 items-center">
           <Link
-            to="/contact"
+            to="/connect"
             className="bg-white text-[#0B0B0C] px-6 py-3 rounded-lg font-medium"
           >
             Contact Me →
