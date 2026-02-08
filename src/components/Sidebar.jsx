@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { FiHome, FiBriefcase, FiImage, FiCompass, FiUser } from 'react-icons/fi';
+import { FiHome, FiBriefcase, FiLink, FiCode, FiUser } from 'react-icons/fi';
 
 function Sidebar() {
   const navItems = [
     { path: '/', label: 'Home', icon: FiHome, animation: 'animate-bounce-subtle' },
     { path: '/projects', label: 'Projects', icon: FiBriefcase, animation: 'animate-sway' },
-    { path: '/gallery', label: 'Gallery', icon: FiImage, animation: 'animate-pulse-image' },
-    { path: '/journey', label: 'Journey', icon: FiCompass, animation: 'animate-spin-compass' },
+    { path: '/connect', label: 'Connect', icon: FiLink, animation: 'animate-ping' },
+    { path: '/skills', label: 'Skills', icon: FiCode, animation: 'animate-pulse' },
     { path: '/about', label: 'About', icon: FiUser, animation: 'animate-head-bounce' },
   ];
 
@@ -35,8 +35,8 @@ function Sidebar() {
                 className={`
                   ${item.animation === 'animate-bounce-subtle' ? 'group-hover:animate-bounce-subtle' : ''}
                   ${item.animation === 'animate-sway' ? 'group-hover:animate-sway' : ''}
-                  ${item.animation === 'animate-pulse-image' ? 'group-hover:animate-pulse-image' : ''}
-                  ${item.animation === 'animate-spin-compass' ? 'group-hover:animate-spin-compass' : ''}
+                  ${item.animation === 'animate-ping' ? 'group-hover:animate-ping' : ''}
+                  ${item.animation === 'animate-pulse' ? 'group-hover:animate-pulse' : ''}
                   ${item.animation === 'animate-head-bounce' ? 'group-hover:animate-head-bounce' : ''}
                 `}
               />
