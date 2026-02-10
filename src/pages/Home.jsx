@@ -14,7 +14,7 @@ function Home() {
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto pt-8 md:pt-16 pb-6 px-4 md:px-8">
-        <p className="text-[#6F6F6F] text-xs uppercase tracking-wider mb-6 md:mb-8">
+        <p className="text-[#B0B0B0] text-sm md:text-base uppercase tracking-wider mb-6 md:mb-8 font-medium">
           Developer / Builder / Open Source
         </p>
 
@@ -22,9 +22,9 @@ function Home() {
           I experiment with ideas that push me forward.
         </h1>
 
-        <div className="space-y-3 md:space-y-4 text-[#9A9A9A] text-sm md:text-base leading-relaxed">
+        <div className="space-y-4 md:space-y-6 text-[#B0B0B0] text-base md:text-lg leading-relaxed">
           <p>
-            Hello! I'm <span className="text-[#F2F2F2]">Bhavesh Singh</span>, a developer from India who enjoys building practical, user-focused web applications and experimenting with new technologies.
+            Hello! I'm <span className="text-[#F2F2F2] font-medium">Bhavesh Singh</span>, a developer from India who enjoys building practical, user-focused web applications and experimenting with new technologies.
           </p>
           <p>
             I've worked on multiple full-stack projects, explored real-world problem solving through internships and independent builds, and continuously improve my skills through hands-on development.
@@ -37,13 +37,13 @@ function Home() {
         <div className="mt-12 flex gap-6 items-center">
           <Link
             to="/connect"
-            className="bg-white text-[#0B0B0C] px-6 py-3 rounded-lg font-medium"
+            className="bg-white text-[#0B0B0C] px-6 py-3 rounded-lg font-bold text-sm md:text-base hover:bg-gray-100 transition-colors"
           >
             Contact Me →
           </Link>
           <Link
             to="/projects"
-            className="text-[#9A9A9A] hover:text-[#F2F2F2]"
+            className="text-[#B0B0B0] hover:text-white font-medium text-sm md:text-base transition-colors"
           >
             View Projects
           </Link>
@@ -61,7 +61,7 @@ function Home() {
 
       {/* Tech Stack Section */}
       <section className="max-w-4xl mx-auto pb-6 px-4 md:px-8">
-        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Tools that I have used</h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Tools that I have used</h2>
         
         <div className="relative overflow-hidden">
           <div 
@@ -73,10 +73,10 @@ function Home() {
               return (
                 <div
                   key={`${tech.name}-${index}`}
-                  className="inline-flex items-center gap-2 px-3 py-2.75 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] whitespace-nowrap flex-shrink-0"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] whitespace-nowrap flex-shrink-0 hover:border-[#3A3A3A] transition-colors"
                 >
-                  {Icon && <Icon className="text-sm flex-shrink-0" style={{ color: tech.color }} />}
-                  <span className="text-[#E0E0E0] text-xs font-medium">{tech.name}</span>
+                  {Icon && <Icon className="text-base flex-shrink-0" style={{ color: tech.color }} />}
+                  <span className="text-[#E0E0E0] text-sm font-medium">{tech.name}</span>
                 </div>
               );
             })}
@@ -91,10 +91,10 @@ function Home() {
               return (
                 <div
                   key={`${tech.name}-reverse-${index}`}
-                  className="inline-flex items-center gap-2 px-3 py-2.75 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] whitespace-nowrap flex-shrink-0"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] whitespace-nowrap flex-shrink-0 hover:border-[#3A3A3A] transition-colors"
                 >
-                  {Icon && <Icon className="text-sm flex-shrink-0" style={{ color: tech.color }} />}
-                  <span className="text-[#E0E0E0] text-xs font-medium">{tech.name}</span>
+                  {Icon && <Icon className="text-base flex-shrink-0" style={{ color: tech.color }} />}
+                  <span className="text-[#E0E0E0] text-sm font-medium">{tech.name}</span>
                 </div>
               );
             })}
@@ -109,10 +109,10 @@ function Home() {
               return (
                 <div
                   key={`${tech.name}-third-${index}`}
-                  className="inline-flex items-center gap-2 px-3 py-2.75 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] whitespace-nowrap flex-shrink-0"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] whitespace-nowrap flex-shrink-0 hover:border-[#3A3A3A] transition-colors"
                 >
-                  {Icon && <Icon className="text-sm flex-shrink-0" style={{ color: tech.color }} />}
-                  <span className="text-[#E0E0E0] text-xs font-medium">{tech.name}</span>
+                  {Icon && <Icon className="text-base flex-shrink-0" style={{ color: tech.color }} />}
+                  <span className="text-[#E0E0E0] text-sm font-medium">{tech.name}</span>
                 </div>
               );
             })}
@@ -146,23 +146,23 @@ function Home() {
 
       {/* Get in Touch Section */}
       <section className="max-w-4xl mx-auto py-6 px-4 md:px-8 pb-16 md:pb-16">
-        <h2 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">Get in Touch</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Get in Touch</h2>
         
-        <p className="text-sm md:text-base text-[#9A9A9A] leading-relaxed mb-4 md:mb-6 max-w-4xl">
+        <p className="text-base md:text-lg text-[#B0B0B0] leading-relaxed mb-6 md:mb-8 max-w-4xl">
           Have a project in mind or want to collaborate? I'm always open to discussing new opportunities, 
           creative ideas, or just having a chat about technology and design.
         </p>
         
-        <p className="text-sm md:text-base text-[#9A9A9A] mb-6 md:mb-8">
-          Reach out via email at <a href="mailto:bhavesh.singhjayash@gmail.com" className="text-[#00ADB5] hover:text-[#0097A7] transition-colors">bhavesh.singhjayash@gmail.com</a>
+        <p className="text-base md:text-lg text-[#B0B0B0] mb-8 md:mb-10">
+          Reach out via email at <a href="mailto:bhavesh.singhjayash@gmail.com" className="text-[#00ADB5] hover:text-[#0097A7] transition-colors font-medium">bhavesh.singhjayash@gmail.com</a>
         </p>
         
         <div>
-          <h3 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Connect with me</h3>
-          <div className="flex flex-wrap gap-3">
+          <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">Connect with me</h3>
+          <div className="flex flex-wrap gap-4">
             <SocialIcon 
               url="https://github.com/bhaveshs1212" 
-              style={{ height: 40, width: 40 }} 
+              style={{ height: 48, width: 48 }} 
               bgColor={hoveredIcon === 'github' ? '#575656' : '#333'} 
               fgColor="#fff"
               target="_blank"
@@ -172,7 +172,7 @@ function Home() {
             
             <SocialIcon 
               url="https://linkedin.com/in/bhavesh-singh12" 
-              style={{ height: 40, width: 40 }} 
+              style={{ height: 48, width: 48 }} 
               bgColor={hoveredIcon === 'linkedin' ? '#0077B5' : '#333'} 
               fgColor="#fff"
               target="_blank"
@@ -182,7 +182,7 @@ function Home() {
             
             <SocialIcon 
               url="https://instagram.com/bhavesh" 
-              style={{ height: 40, width: 40 }} 
+              style={{ height: 48, width: 48 }} 
               bgColor={hoveredIcon === 'instagram' ? '#E4405F' : '#333'} 
               fgColor="#fff"
               target="_blank"
@@ -192,7 +192,7 @@ function Home() {
             
             <SocialIcon 
               url="https://twitter.com/bhavesh" 
-              style={{ height: 40, width: 40 }} 
+              style={{ height: 48, width: 48 }} 
               bgColor={hoveredIcon === 'twitter' ? '#1DA1F2' : '#333'} 
               fgColor="#fff"
               target="_blank"
