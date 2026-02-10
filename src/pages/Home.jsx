@@ -13,16 +13,16 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto pt-24 pb-6 px-8">
-        <p className="text-[#6F6F6F] text-xs uppercase tracking-wider mb-8">
+      <section className="max-w-4xl mx-auto pt-16 md:pt-24 pb-6 px-4 md:px-8">
+        <p className="text-[#6F6F6F] text-xs uppercase tracking-wider mb-6 md:mb-8">
           Developer / Builder / Open Source
         </p>
 
-        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6 md:mb-8">
           I experiment with ideas that push me forward.
         </h1>
 
-        <div className="space-y-4 text-[#9A9A9A] leading-relaxed">
+        <div className="space-y-3 md:space-y-4 text-[#9A9A9A] text-sm md:text-base leading-relaxed">
           <p>
             Hello! I'm <span className="text-[#F2F2F2]">Bhavesh Singh</span>, a developer from India who enjoys building practical, user-focused web applications and experimenting with new technologies.
           </p>
@@ -51,8 +51,8 @@ function Home() {
       </section>
 
       {/* GitHub Activity Calendar */}
-      <section className="max-w-4xl mx-auto py-12 px-8">
-        <h2 className="text-xl font-bold mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">GitHub Activity</h2>
+      <section className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
+        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">GitHub Activity</h2>
         
         <div className="[&_.react-activity-calendar__scroll-container]:pl-6">
           <GitHubContributions />
@@ -60,8 +60,8 @@ function Home() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="max-w-4xl mx-auto pb-6 px-8">
-        <h2 className="text-xl font-bold mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Tools that I have used</h2>
+      <section className="max-w-4xl mx-auto pb-6 px-4 md:px-8">
+        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Tools that I have used</h2>
         
         <div className="relative overflow-hidden">
           <div 
@@ -121,9 +121,9 @@ function Home() {
       </section>  
       
       {/* Featured Projects Section */}
-      <section className="max-w-4xl mx-auto py-12 px-8">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-xl font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Featured Projects</h2>
+      <section className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
+        <div className="flex justify-between items-center mb-6 md:mb-8">
+          <h2 className="text-lg md:text-xl font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Featured Projects</h2>
           <Link 
             to="/projects" 
             className="text-[#9A9A9A] hover:text-[#F2F2F2] text-sm transition-colors"
@@ -145,21 +145,21 @@ function Home() {
       </section>
 
       {/* Get in Touch Section */}
-      <section className="max-w-4xl mx-auto py-6 px-8">
-        <h2 className="text-xl font-bold text-white mb-6">Get in Touch</h2>
+      <section className="max-w-4xl mx-auto py-6 px-4 md:px-8 pb-24 md:pb-16">
+        <h2 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">Get in Touch</h2>
         
-        <p className="text-[#9A9A9A] leading-relaxed mb-6 max-w-4xl">
+        <p className="text-sm md:text-base text-[#9A9A9A] leading-relaxed mb-4 md:mb-6 max-w-4xl">
           Have a project in mind or want to collaborate? I'm always open to discussing new opportunities, 
           creative ideas, or just having a chat about technology and design.
         </p>
         
-        <p className="text-[#9A9A9A] mb-8">
+        <p className="text-sm md:text-base text-[#9A9A9A] mb-6 md:mb-8">
           Reach out via email at <a href="mailto:bhavesh.singhjayash@gmail.com" className="text-[#00ADB5] hover:text-[#0097A7] transition-colors">bhavesh.singhjayash@gmail.com</a>
         </p>
         
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Connect with me</h3>
-          <div className="flex gap-3">
+          <h3 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Connect with me</h3>
+          <div className="flex flex-wrap gap-3">
             <SocialIcon 
               url="https://github.com/bhaveshs1212" 
               style={{ height: 40, width: 40 }} 

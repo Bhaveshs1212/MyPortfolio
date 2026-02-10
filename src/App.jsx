@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Sidebar from './components/Sidebar'
+import MobileNav from './components/MobileNav'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -36,6 +37,7 @@ function App() {
       </div>
       
       <Sidebar />
+      <MobileNav />
       <div>
         <Routes>
         <Route path="/" element={<Home />} />

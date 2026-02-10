@@ -9,7 +9,7 @@ function Projects() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Breadcrumb */}
-      <div className="max-w-4xl mx-auto pt-24 pb-8 px-8">
+      <div className="max-w-4xl mx-auto pt-16 md:pt-24 pb-6 md:pb-8 px-4 md:px-8">
         <div className="flex items-center gap-2 text-sm text-[#9A9A9A]">
           <Link to="/" className="hover:text-[#F2F2F2] transition-colors duration-200">
             Home
@@ -20,12 +20,12 @@ function Projects() {
       </div>
 
       {/* Page Title */}
-      <div className="max-w-4xl mx-auto px-8 mb-16">
-        <h1 className="text-3xl font-bold text-[#F2F2F2]">All Projects</h1>
+      <div className="max-w-4xl mx-auto px-4 md:px-8 mb-12 md:mb-16">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#F2F2F2]">All Projects</h1>
       </div>
 
       {/* Projects List */}
-      <div className="max-w-4xl mx-auto px-8 pb-24 space-y-8">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 pb-24 md:pb-24 space-y-6 md:space-y-8">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
