@@ -19,15 +19,15 @@ function ProjectCard({ project }) {
           <div className="relative bg-black flex flex-col">
           
           {/* Image container - no extra padding */}
-          <div className="w-full bg-[#2A2D33] overflow-hidden max-h-[140px] md:max-h-[160px]">
+          <div className="w-full bg-[#2A2D33] overflow-hidden">
             {project.hasImage() ? (
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
+                className="w-full h-auto object-cover transition-transform duration-500 ease-out hover:scale-110"
               />
             ) : (
-              <div className="w-full h-[140px] md:h-[160px] flex items-center justify-center transition-transform duration-500 ease-out hover:scale-110">
+              <div className="w-full aspect-[4/3] flex items-center justify-center transition-transform duration-500 ease-out hover:scale-110">
                 <span className="text-white/20 text-sm font-bold">{project.title}</span>
               </div>
             )}
