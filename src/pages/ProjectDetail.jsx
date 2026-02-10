@@ -27,7 +27,7 @@ function ProjectDetail() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Breadcrumb Navigation */}
-      <div className="max-w-4xl mx-auto px-4 md:px-8 pt-12 md:pt-16 pb-4 md:pb-6">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 pt-6 md:pt-10 pb-4 md:pb-6">
         <div className="flex items-center gap-2 text-xs md:text-sm text-[#9A9A9A]">
           <Link to="/" className="hover:text-[#F2F2F2] transition-colors duration-200">
             Home
@@ -186,7 +186,7 @@ function ProjectDetail() {
 
         {/* Key Features */}
         {project.keyFeatures && project.keyFeatures.length > 0 && (
-          <div className="mb-12 md:mb-16 pb-12 md:pb-0">
+          <div className="mb-12 md:mb-16 pb-8 md:pb-0">
             <h2 className="text-xl md:text-2xl font-bold text-[#F2F2F2] mb-4 md:mb-6">Key Features</h2>
             <ul className="space-y-2 md:space-y-3">
               {project.keyFeatures.map((feature, index) => (

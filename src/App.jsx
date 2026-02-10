@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import Sidebar from './components/Sidebar'
-import MobileNav from './components/MobileNav'
+import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -31,14 +30,8 @@ function App() {
   }, [location])
   return (
     <div className="min-h-screen bg-[#0B0B0C]">
-      {/* BS Trademark Logo */}
-      <div className="hidden md:block fixed top-8 left-8 z-50">
-        <span className="text-[#F2F2F2] font-semibold text-xl tracking-tight">BS</span>
-      </div>
-      
-      <Sidebar />
-      <MobileNav />
-      <div>
+      <Navbar />
+      <div className="pt-14 md:pt-16">
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

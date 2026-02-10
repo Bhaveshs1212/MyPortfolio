@@ -82,7 +82,7 @@ function Skills() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2] flex items-center py-16 md:py-0">
+    <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2] flex items-center py-8 md:py-16">
       <section className="w-full max-w-6xl mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
@@ -138,7 +138,7 @@ function Skills() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center pt-3 md:pt-4 gap-4 md:gap-6 pb-16 md:pb-0">
+        <div className="flex flex-wrap justify-center pt-3 md:pt-4 gap-4 md:gap-6 pb-8 md:pb-0">
           {stats.map((stat, index) => (
             <div key={stat.label} className="flex items-center gap-1.5 md:gap-2">
               {stat.value === true ? (

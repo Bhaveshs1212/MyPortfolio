@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto pt-16 md:pt-24 pb-6 px-4 md:px-8">
+      <section className="max-w-4xl mx-auto pt-8 md:pt-16 pb-6 px-4 md:px-8">
         <p className="text-[#6F6F6F] text-xs uppercase tracking-wider mb-6 md:mb-8">
           Developer / Builder / Open Source
         </p>
@@ -145,7 +145,7 @@ function Home() {
       </section>
 
       {/* Get in Touch Section */}
-      <section className="max-w-4xl mx-auto py-6 px-4 md:px-8 pb-24 md:pb-16">
+      <section className="max-w-4xl mx-auto py-6 px-4 md:px-8 pb-16 md:pb-16">
         <h2 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">Get in Touch</h2>
         
         <p className="text-sm md:text-base text-[#9A9A9A] leading-relaxed mb-4 md:mb-6 max-w-4xl">
