@@ -44,17 +44,17 @@ function ProjectCard({ project }) {
         {/* RIGHT CONTENT PANEL - Pure Black */}
         <div className="bg-black p-2.5 md:p-3 flex flex-col relative">
           
-          {/* Date badge - top right */}
-          {project.completionDate && (
+          {/* Featured Badge - top right */}
+          {project.featured && (
             <div className="absolute top-2.5 md:top-3 right-2.5 md:right-3">
-              <span className="text-[#888888] text-[8px] md:text-[9px] font-normal uppercase tracking-wider">
-                {project.completionDate}
+              <span className="text-[#00D9FF] text-[8px] md:text-[9px] font-semibold uppercase tracking-wider border border-[#00D9FF] px-2 py-0.5 rounded">
+                FEATURED
               </span>
             </div>
           )}
 
           {/* Title */}
-          <h2 className="text-white text-xs md:text-sm font-semibold pr-10 md:pr-12">
+          <h2 className="text-white text-xs md:text-sm font-semibold pr-16 md:pr-20">
             {project.title}
           </h2>
 

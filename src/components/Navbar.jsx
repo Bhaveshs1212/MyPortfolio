@@ -15,52 +15,77 @@ function Navbar() {
             <NavLink 
               to="/" 
               className={({ isActive }) => 
-                `text-xs md:text-sm transition-colors duration-200 ${
+                `text-xs md:text-sm transition-colors duration-200 relative pb-1 ${
                   isActive ? 'text-[#00D9FF]' : 'text-[#9A9A9A] hover:text-[#F2F2F2]'
                 }`
               }
             >
-              Home
+              {({ isActive }) => (
+                <>
+                  Home
+                  {isActive && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00D9FF]"></div>}
+                </>
+              )}
             </NavLink>
             <NavLink 
               to="/projects" 
               className={({ isActive }) => 
-                `text-xs md:text-sm transition-colors duration-200 ${
+                `text-xs md:text-sm transition-colors duration-200 relative pb-1 ${
                   isActive ? 'text-[#00D9FF]' : 'text-[#9A9A9A] hover:text-[#F2F2F2]'
                 }`
               }
             >
-              Projects
+              {({ isActive }) => (
+                <>
+                  Projects
+                  {isActive && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00D9FF]"></div>}
+                </>
+              )}
             </NavLink>
             <NavLink 
               to="/skills" 
               className={({ isActive }) => 
-                `text-xs md:text-sm transition-colors duration-200 ${
+                `text-xs md:text-sm transition-colors duration-200 relative pb-1 ${
                   isActive ? 'text-[#00D9FF]' : 'text-[#9A9A9A] hover:text-[#F2F2F2]'
                 }`
               }
             >
-              Skills
+              {({ isActive }) => (
+                <>
+                  Skills
+                  {isActive && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00D9FF]"></div>}
+                </>
+              )}
             </NavLink>
             <NavLink 
               to="/about" 
               className={({ isActive }) => 
-                `text-xs md:text-sm transition-colors duration-200 ${
+                `text-xs md:text-sm transition-colors duration-200 relative pb-1 ${
                   isActive ? 'text-[#00D9FF]' : 'text-[#9A9A9A] hover:text-[#F2F2F2]'
                 }`
               }
             >
-              About
+              {({ isActive }) => (
+                <>
+                  About
+                  {isActive && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00D9FF]"></div>}
+                </>
+              )}
             </NavLink>
             <NavLink 
               to="/connect" 
               className={({ isActive }) => 
-                `text-xs md:text-sm transition-colors duration-200 ${
+                `text-xs md:text-sm transition-colors duration-200 relative pb-1 ${
                   isActive ? 'text-[#00D9FF]' : 'text-[#9A9A9A] hover:text-[#F2F2F2]'
                 }`
               }
             >
-              Connect
+              {({ isActive }) => (
+                <>
+                  Connect
+                  {isActive && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00D9FF]"></div>}
+                </>
+              )}
             </NavLink>
           </div>
         </div>
