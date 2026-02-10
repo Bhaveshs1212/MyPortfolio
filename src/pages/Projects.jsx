@@ -10,18 +10,18 @@ function Projects() {
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Breadcrumb */}
       <div className="max-w-4xl mx-auto pt-8 md:pt-12 pb-4 md:pb-6 px-4 md:px-8">
-        <div className="flex items-center gap-2 text-xs md:text-sm text-[#9A9A9A]">
+        <div className="flex items-center gap-2 text-sm md:text-base text-[#B0B0B0]">
           <Link to="/" className="hover:text-[#F2F2F2] transition-colors duration-200">
             Home
           </Link>
-          <FiChevronRight className="text-xs" />
+          <FiChevronRight className="text-sm" />
           <span className="text-[#F2F2F2]">Projects</span>
         </div>
       </div>
 
       {/* Page Title */}
       <div className="max-w-4xl mx-auto px-4 md:px-8 mb-8 md:mb-12">
-        <h1 className="text-2xl md:text-3xl font-bold text-[#F2F2F2]">All Projects</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[#F2F2F2]">All Projects</h1>
       </div>
 
       {/* Projects List */}

@@ -108,7 +108,7 @@ function ProjectDetail() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#00D9FF] hover:text-[#00C4E6] transition-colors duration-200 flex items-center justify-center sm:justify-start gap-2 font-medium text-sm md:text-base">
-              >
+              
                 View Live Site <FiExternalLink />
               </a>
             )}
@@ -118,7 +118,7 @@ function ProjectDetail() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#00D9FF] hover:text-[#00C4E6] transition-colors duration-200 flex items-center justify-center sm:justify-start gap-2 font-medium text-sm md:text-base">
-              >
+              
                 View Source Code <FiGithub />
               </a>
             )}

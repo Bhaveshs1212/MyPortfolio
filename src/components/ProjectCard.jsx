@@ -34,58 +34,58 @@ function ProjectCard({ project }) {
           </div>
           
           {/* Tagline below image */}
-          <div className="px-2 md:px-3 py-1.5 md:py-2 bg-black">
-            <p className="text-white text-[9px] md:text-[10px] font-normal leading-tight">
+          <div className="px-3 md:px-4 py-2 md:py-2.5 bg-black">
+            <p className="text-white text-xs md:text-sm font-normal leading-tight">
               {project.tagline}
             </p>
           </div>
         </div>
 
         {/* RIGHT CONTENT PANEL - Pure Black */}
-        <div className="bg-black p-2.5 md:p-3 flex flex-col relative">
+        <div className="bg-black p-3 md:p-4 flex flex-col relative">
           
           {/* Featured Badge - top right */}
           {project.featured && (
-            <div className="absolute top-2.5 md:top-3 right-2.5 md:right-3">
-              <span className="text-[#00D9FF] text-[8px] md:text-[9px] font-semibold uppercase tracking-wider border border-[#00D9FF] px-2 py-0.5 rounded">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4">
+              <span className="text-[#00D9FF] text-[10px] md:text-xs font-bold uppercase tracking-wider border border-[#00D9FF] px-2 py-0.5 rounded">
                 FEATURED
               </span>
             </div>
           )}
 
           {/* Title */}
-          <h2 className="text-white text-xs md:text-sm font-semibold pr-16 md:pr-20">
+          <h2 className="text-white text-base md:text-lg font-bold pr-20 md:pr-24">
             {project.title}
           </h2>
 
           {/* Description */}
-          <p className="mt-1 md:mt-1.5 text-[#AAAAAA] text-[9px] md:text-[10px] leading-snug">
+          <p className="mt-2 md:mt-2.5 text-[#B0B0B0] text-xs md:text-sm leading-snug">
             {project.shortDescription}
           </p>
 
           {/* Features List */}
-          <ul className="mt-1.5 md:mt-2 space-y-0.5 flex-1">
+          <ul className="mt-2.5 md:mt-3 space-y-1 flex-1">
             {previewFeatures.map((feature, i) => (
-              <li key={i} className="text-[#AAAAAA] text-[8px] md:text-[9px] flex items-start leading-snug">
-                <span className="mr-1">•</span>
+              <li key={i} className="text-[#B0B0B0] text-xs md:text-sm flex items-start leading-snug">
+                <span className="mr-1.5">•</span>
                 <span>{feature}</span>
               </li>
             ))}
             {project.keyFeatures.length > 4 && (
-              <li className="text-[#777777] text-[8px] md:text-[9px] flex items-start">
-                <span className="mr-1">•</span>
+              <li className="text-[#999999] text-xs md:text-sm flex items-start">
+                <span className="mr-1.5">•</span>
                 <span>+{project.keyFeatures.length - 4} more features</span>
               </li>
             )}
           </ul>
 
           {/* Tech Stack - pushed to bottom */}
-          <div className="pt-1.5 md:pt-2 flex flex-wrap gap-1">
+          <div className="pt-3 md:pt-4 flex flex-wrap gap-1.5">
             {previewTech.map((tech, i) => (
               <TechBadge key={i} technology={tech} />
             ))}
             {remainingCount > 0 && (
-              <span className="px-1.5 md:px-2 py-0.5 pt-1 md:pt-1.5 text-[9px] md:text-[10px] rounded-md bg-[#1A1A1A] text-[#AAAAAA] border border-[#333333] font-medium">
+              <span className="px-2 py-1 text-xs md:text-sm rounded-md bg-[#1A1A1A] text-[#B0B0B0] border border-[#333333] font-medium flex items-center">
                 +{remainingCount}
               </span>
             )}
